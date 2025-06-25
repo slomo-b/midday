@@ -1,7 +1,5 @@
 "use client";
 
-import { shareFileAction } from "@/actions/share-file-action";
-import { useExportStore } from "@/store/export";
 import { Button } from "@midday/ui/button";
 import {
   DropdownMenu,
@@ -15,6 +13,8 @@ import { addDays, addYears } from "date-fns";
 import { useAction } from "next-safe-action/hooks";
 import { useEffect, useState } from "react";
 import { useCopyToClipboard } from "usehooks-ts";
+import { shareFileAction } from "@/actions/share-file-action";
+import { useExportStore } from "@/store/export";
 
 const options = [
   {
@@ -61,7 +61,7 @@ export function ExportStatus() {
     },
   });
 
-  const handleOnDownload = () => {
+  const _handleOnDownload = () => {
     if (toastId) {
       dismiss(toastId);
     }

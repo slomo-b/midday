@@ -6,8 +6,8 @@ import {
 import { createTRPCRouter, protectedProcedure } from "@api/trpc/init";
 import { createAttachments, deleteAttachment } from "@midday/db/queries";
 import { allowedMimeTypes } from "@midday/documents/utils";
-import { processAttachmentSchema } from "@worker/jobs/documents/process-attachment";
 import { tasks } from "@worker/jobs/tasks";
+import { processAttachmentSchema } from "@worker/schemas/jobs";
 
 export const transactionAttachmentsRouter = createTRPCRouter({
   createMany: protectedProcedure
